@@ -1,9 +1,13 @@
 data "aws_vpc" "this" {
-  cidr_block = "10.1.0.0/16"
+  tags = {
+   "Name" = var.vpc_name
+  }
 }
 
 data "aws_vpc" "peer" {
-  cidr_block = "10.2.0.0/16"
+  tags = {
+   "Name" = var.peer_vpc_name
+  }
 }
 
 
